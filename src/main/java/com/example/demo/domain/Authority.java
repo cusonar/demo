@@ -1,11 +1,9 @@
 package com.example.demo.domain;
 
-import com.example.demo.config.jpa.Auditable;
-import com.example.demo.hello.service.HelloDto;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,19 +13,15 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @NoArgsConstructor
-public class Hello extends Auditable {
+public class Authority implements GrantedAuthority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String message;
 
-    @Builder
-    public Hello(String message) {
-        this.message = message;
-    }
+    private String authority;
 
-    public void update(HelloDto.Update dto) {
-        if (dto.getMessage() != null) this.message = dto.getMessage();
+    public Authority(String authority) {
+        this.authority = authority;
     }
 }

@@ -1,0 +1,19 @@
+spring:
+  security:
+    user:
+      password: 1234
+
+  datasource:
+    hikari:
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:tcp://localhost:9092/~/app/h2/test
+      username: sa
+      password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+jwt:
+  secret: 1JNMviYxCm+pRtSiW1LX/At3JMwLWOADjoygv0vtOns=
+  access-token.expire-time: 1800  # 60 * 30 = 30 min
+  refresh-token.expire-time: 1209600 # 60 * 60 * 24 * 14 = 14 days

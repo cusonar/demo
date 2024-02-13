@@ -5,6 +5,6 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class Response<T> {
-    private T data;
+public class ExceptionResponse {
+    private String message;
 }

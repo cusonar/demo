@@ -34,6 +34,7 @@ public class HelloDto {
     }
 
     @Getter
+    @AllArgsConstructor
     @NoArgsConstructor
     @ToString
     public static class Create {
